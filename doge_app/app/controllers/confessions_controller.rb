@@ -13,7 +13,8 @@ class ConfessionsController < ApplicationController
   end
 
   def create
-    redirect_to confessions_path
+    UserMailer.submitted_confession_email(params[:email]).deliver
+    redirect_to confessions_show_path
   end
 
 
