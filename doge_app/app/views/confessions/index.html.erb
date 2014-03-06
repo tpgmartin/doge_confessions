@@ -1,0 +1,17 @@
+<%= form_tag do %>
+
+  <div class="field">
+    <%= label_tag :confession_text %><br />
+    <%= text_area_tag :confession_text %>
+  </div>
+  <div class ="email">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Send confession' %>
+  </div>
+
+
+<% end %>
+
