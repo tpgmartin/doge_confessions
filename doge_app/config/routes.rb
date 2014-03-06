@@ -1,5 +1,7 @@
 DogeApp::Application.routes.draw do
-  resources :confessions
+
+  get 'confessions', to: 'confessions#index'
+  post 'confessions/show', to: 'confessions#show'
 
   root :to => 'confessions#index'
   # The priority is based upon order of creation:
