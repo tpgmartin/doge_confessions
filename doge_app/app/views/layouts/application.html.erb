@@ -9,8 +9,26 @@
 <body>
 
 <div id="container">
-  <%= yield %>
+
+  <div id="doge_header">
+    <img src="http://31.media.tumblr.com/bafd9d6c3902ca21c8d4e7a3e75e1253/tumblr_mr696b9BGu1szim6vo1_400.jpg">
+  </div>
+  <div id="content">
+    <%= yield %>
+  </div>
+
 </div>
+
+<script type="text/javascript">
+  var fontcolorlist = new Array("#00ff00", "#ff0000", "#00ffff", "#ff00ff", "#ffff00", "0000ff")
+  $(".h1").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+  $("#first").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+  $("#second").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+  $("#third").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+  $(".field").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+  $(".email").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+  $(".actions").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+</script>
 
 </body>
 </html>

@@ -1,10 +1,10 @@
 <%= form_tag '/confessions/show' do %>
 
-  <h1>Wow</h1>
+  <h1 class="h1">Wow</h1>
 
-  <h2>Plz below</h2>
-  <h2>Many courtesy</h2>
-  <h2>Much understand</h2><br>
+  <h2 id="first">Plz below</h2>
+  <h2 id="second">Many courtesy</h2>
+  <h2 id="third">Much understand</h2><br>
 
   <div class="field">
     <%= label_tag :Much_Explain %><br />
@@ -15,7 +15,7 @@
     <%= text_field_tag :email %>
   </div><br>
   <div class="actions">
-    <%= submit_tag 'So Confession' %>
+    <%= submit_tag 'So Confession', :class => "button" %>
   </div>
 
 
