@@ -14,3 +14,34 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(function(){
+  $('.submit_btn').click(function(ev){
+
+    ev.preventDefault();
+    $conf = $('#confession_text').val();
+    $email = $('#email').val();
+    console.log($conf);
+
+    $.ajax({
+           url: "https://api.hipchat.com/v2/room/374044/notification?auth_token=5r7PSHRdqSpmJoYNoTsEN5uMXXhV7Qj63jr1w...",
+           type:"POST",
+           data: JSON.stringify({ message: $conf, message_format: 'text' } ),
+           contentType:"application/json; charset=utf-8",
+           dataType:"json",
+           success: function(data){
+             console.log(data);
+           }
+       });
+
+    $.ajax({
+            url: "/confessions",
+            type: "POST",
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            data: { email: $email, confession_text: $conf },
+            success: function(data){
+
+            }
+        });
+  });
+
+});

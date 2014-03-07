@@ -2,11 +2,11 @@ namespace :email_process do
   desc "sending emails to users"
   task :send => :environment do
     Confession.all.each do |confession|
-    email_num = %w(1 2 3 4 5 6 7 8 9).sample
+    email_num = %w(1 2 3 4 5).sample
 
     case email_num
       when '1'
-        mail_num = %w(1 2 3 4 5 6 7 8 9 10).sample
+        mail_num = %w(1 2 3 4 5).sample
 
     case mail_num
       when '1'
@@ -19,16 +19,6 @@ namespace :email_process do
         UserMailer.submitted_confession_email4(confession.email).deliver
       when '5'
         UserMailer.submitted_confession_email5(confession.email).deliver
-      when '6'
-        UserMailer.submitted_confession_email6(confession.email).deliver
-      when '7'
-        UserMailer.submitted_confession_email7(confession.email).deliver
-      when '8'
-        UserMailer.submitted_confession_email8(confession.email).deliver
-      when '9'
-        UserMailer.submitted_confession_email9(confession.email).deliver
-      when '10'
-        UserMailer.submitted_confession_email10(confession.email).deliver
     end
 
     puts "going to destroy this confession #{confession.id}"
