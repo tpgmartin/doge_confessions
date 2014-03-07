@@ -8,19 +8,54 @@
 </head>
 <body>
 
-<div id="container">
+<div id="container" style="width:100%; height:100%; background-color: #ffee7f">
 
-  <div id="doge_header">
-    <img src="http://31.media.tumblr.com/bafd9d6c3902ca21c8d4e7a3e75e1253/tumblr_mr696b9BGu1szim6vo1_400.jpg">
-  </div>
+  <header style="display:block">
+    <div id="doge_header">
+      <h1 style="display:inline-block; margin: 10px 0 0 0; font-size:4em"><span id="many_confession">Many Confession.</span><span id="very_doge">So Doge</span></h1>
+      
+    </div>
+  </header>
+
   <div id="content">
     <%= yield %>
   </div>
 
+  <img id="myDoge" style="display:block; bottom:0" src="../../assets/Header.png">
+
+  <footer style="background-color:#ff4629; width:100%; height:90px; margin-bottom:0; padding-bottom:0">
+    This is a footer!
+  </footer>
+
 </div>
 
+  
+
 <script type="text/javascript">
+  $(document).ready(function(e) {
+    var width = $(document).width();
+
+    function goRight() {
+        $("#myDoge").animate({
+        left: width - 410
+      }, 5000, function() {
+         setTimeout(goLeft, 50);
+      });
+    }
+    function goLeft() {
+        $("#myDoge").animate({
+        left: 0
+      }, 5000, function() {
+         setTimeout(goRight, 50);
+      });
+    }
+
+    setTimeout(goLeft, 0);
+  });
+
   var fontcolorlist = new Array("#00ff00", "#ff0000", "#00ffff", "#ff00ff", "#ffff00", "0000ff")
+  $("#many_confession").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+  $("#very_doge").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $(".h1").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $("#first").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $("#second").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
@@ -29,6 +64,7 @@
   $(".email").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $(".actions").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
 </script>
+
 
 </body>
 </html>
