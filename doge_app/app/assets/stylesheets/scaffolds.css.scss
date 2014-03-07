@@ -33,6 +33,8 @@ pre {
 
 a {
   color: #000;
+  text-decoration: none;
+  text-align: center;
   &:visited {
     color: #666;
   }
@@ -102,29 +104,41 @@ div {
 
 .h1 {
   // margin: 2% 0 0 30%;
+  position: relative;
+  z-index: 500;
 }
 
 .h2 {
   // margin: 2% 0 0 30%;
+  position: relative;
+  z-index: 500;
 }
 
 #first {
   // margin: 4% 60% 0 0;
+  position: relative;
+  z-index: 500;
 }
 
 #second {
   // margin: 0 0 0 500px;
+  position: relative;
+  z-index: 500;
 }
 
 #third {
   // margin: 10% 40% 0 0;
+  position: relative;
+  z-index: 500;
 }
 
 #form {
   float: right;
   margin-right: 15%;
   z-index: 500;
-  position: relative;
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
 }
 
 #form input[type="submit"] {
