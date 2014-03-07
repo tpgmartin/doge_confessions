@@ -6,16 +6,18 @@
   <h2 id="second">Many courtesy</h2>
   <h2 id="third">Much understand</h2><br>
 
-  <div class="field">
-    <%= label_tag :Much_Explain %><br />
-    <%= text_area_tag :confession_text %>
-  </div>
-  <div class ="email">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email %>
-  </div><br>
-  <div class="actions">
-    <div class="button"><%= submit_tag 'So Confession', :style => "font-family:Comic Sans MS;color: red;" %></div>
+  <div id="form">
+    <div class="field" type="text">
+      <%= label_tag :Much_Explain %><br />
+      <%= text_area_tag :confession_text %>
+    </div>
+    <div class ="email" type="text">
+      <%= label_tag :email %><br />
+      <%= text_field_tag :email %>
+    </div><br>
+    <div class="actions">
+      <div class="button" type="submit"><%= submit_tag 'So Confession', :style => "font-family:Comic Sans MS;color: red;" %></div>
+    </div>
   </div>
 
 

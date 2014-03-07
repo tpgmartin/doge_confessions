@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<div id="container" style="width:100%; height:100%; background-color: #ffee7f">
+<div id="container" style="width:100%; height:100%;">
 
   <header style="display:block">
     <div id="doge_header">
-      <h1 style="display:inline-block; margin: 10px 0 0 0; font-size:4em"><span id="many_confession">Many Confession.</span><span id="very_doge">So Doge</span></h1>
+      <h1 id="heading" style="display:inline-block; margin-left:300px; font-size:4em"><span id="many_confession">Many Confession.</span><span id="so_doge">So Doge</span></h1>
       
     </div>
   </header>
@@ -21,10 +21,10 @@
     <%= yield %>
   </div>
 
-  <img id="myDoge" style="display:block; bottom:0" src="../../assets/Header.png">
+  <img id="myDoge" src="../../assets/Header.png">
 
-  <footer style="background-color:#ff4629; width:100%; height:90px; margin-bottom:0; padding-bottom:0">
-    This is a footer!
+  <footer style="background-color:#ff4629; width:100%; height:90px; position: fixed; bottom: 0; text-align:center">
+    <p id="footer_text">Much disclaim:<br> No liability. Concern. Plz professional. Much intepretation, many effect. So responsible.</p>
   </footer>
 
 </div>
@@ -55,14 +55,29 @@
 
   var fontcolorlist = new Array("#00ff00", "#ff0000", "#00ffff", "#ff00ff", "#ffff00", "0000ff")
   $("#many_confession").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
-  $("#very_doge").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+  $("#so_doge").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $(".h1").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+  $(".h2").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $("#first").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $("#second").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $("#third").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $(".field").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $(".email").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $(".actions").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
+
+  var width = $(document).width();
+  $(".h1").css("margin-left",Math.floor(Math.random()*width));  
+  $(".h2").css("margin-left",Math.floor(Math.random()*width));  
+  $("#first").css("margin-left",Math.floor(Math.random()*width));  
+  $("#second").css("margin-left",Math.floor(Math.random()*width));   
+  $("#third").css("margin-left",Math.floor(Math.random()*width));  
+
+  var height = $(document).height();
+  $(".h1").css("margin-left",Math.floor(Math.random()*height));  
+  $(".h2").css("margin-left",Math.floor(Math.random()*height));  
+  $("#first").css("margin-left",Math.floor(Math.random()*height));  
+  $("#second").css("margin-left",Math.floor(Math.random()*height));   
+  $("#third").css("margin-left",Math.floor(Math.random()*height));  
 </script>
 
 

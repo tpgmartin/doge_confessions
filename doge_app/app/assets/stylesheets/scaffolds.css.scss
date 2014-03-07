@@ -3,15 +3,20 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: #ffee7f;
   color: #333;
   font-family: 'Comic Sans MS';
   font-size: 13px;
   line-height: 18px;
-  text-align: center;
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+#content {
+  display: inline-block;
+  z-index: 1000;
+  width: 100%;
 }
 
 p, ol, ul, td {
@@ -79,12 +84,67 @@ div {
   }
 }
 
-div .button input {
+#myDoge {
+    position: fixed;
+    bottom: 90px;
+    width: 400;
+    height: 270px;
+    z-index: 1;
+}
+
+#doge_header {
+  margin-top: 20px;
+}
+
+#footer_text {
+  vertical-align: middle;
+}
+
+.h1 {
+  // margin: 2% 0 0 30%;
+}
+
+.h2 {
+  // margin: 2% 0 0 30%;
+}
+
+#first {
+  // margin: 4% 60% 0 0;
+}
+
+#second {
+  // margin: 0 0 0 500px;
+}
+
+#third {
+  // margin: 10% 40% 0 0;
+}
+
+#form {
+  float: right;
+  margin-right: 15%;
+  z-index: 500;
+  position: relative;
+}
+
+#form input[type="submit"] {
+  background-color: rgba(255,255, 255, 0);
+  border: none;
+  font-family: 'Comic Sans MS';
+  font-size: 150%;
+}
+
+input {
+  width: 200px;
+  border: 3px dashed #ff0000;
+  background-color: rgba(255,255, 255, 0);
   font-family: 'Comic Sans MS';
 }
 
-#myDoge {
-    position: relative;
-    width: 400;
-    height: 270px;
+#confession_text {
+  font-family: 'Comic Sans MS';
+  width: 200px;
+  height: 100px;
+  border: 3px dashed #ffff00;
+  background-color: rgba(255,255, 255, 0);
 }
