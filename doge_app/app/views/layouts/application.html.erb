@@ -65,6 +65,10 @@
   $(".email").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
   $(".actions").css("color",fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);  
 
+  $("#confession_text").keydown(function(){
+    $("#confession_text").css("color", fontcolorlist[Math.floor(Math.random()*fontcolorlist.length)]);
+  });
+
   var width = $(document).width();
   $(".h1").css("margin-left",Math.floor(Math.random()*width*0.6));  
   $(".h2").css("margin-left",Math.floor(Math.random()*width*0.6));  
