@@ -20,7 +20,6 @@ $(function(){
     ev.preventDefault();
     $conf = $('#confession_text').val();
     $email = $('#email').val();
-    console.log($conf);
 
     $.ajax({
            url: "https://api.hipchat.com/v2/room/374044/notification?auth_token=n1nswU9gcqQsVDSflIa0cuv4171vNUoIKQg7Eqa5",
@@ -29,19 +28,23 @@ $(function(){
            contentType:"application/json; charset=utf-8",
            dataType:"json",
            success: function(data){
-             console.log(data);
+             $.ajax({
+                  url: "/confessions",
+                  type: "POST",
+                  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+                  data: { email: $email, confession_text: $conf },
+                  success: function(data){
+                    window.location.href = 'http://localhost:3000/confessions/show'
+                  }
+              });
+
            }
        });
 
-    // $.ajax({
-    //         url: "/confessions",
-    //         type: "POST",
-    //         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-    //         data: { email: $email, confession_text: $conf },
-    //         success: function(data){
 
-    //         }
-    //     });
   });
+
+
+
 
 });
